@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Soccer Ball",
+        "description": "Men's professional-grade soccer ball for outdoor use",
+        "price": "$30",
+        "categories": ["soccer", "outdoor"]
+    },
+    {
+        "name": "Soccer Cleats",
+        "description": "Durable soccer cleats with metal firm-ground studs",
+        "price": "$90",
+        "categories": ["soccer", "outdoor"]
+    },
+    {
+        "name": "Shin Guards",
+        "description": "High-impact resistant shin guards fitted with the latest in protection tech with adjustable straps",
+        "price": "$28",
+        "categories": ["soccer", "outdoor"]
+    },
+    {
+        "name": "Basketball",
+        "description": "Indoor basketball, size 29.5",
+        "price": "$35",
+        "categories": ["basketball", "indoor"]
+    },
+    {
+        "name": "Outdoor Basketball Hoop",
+        "description": "Adjustable basketball hoop with a 48-inch shatterproof backboard",
+        "price": "$270",
+        "categories": ["basketball", "outdoor"]
+    },
+    {
+        "name": "Sweatband",
+        "description": "Breathable headband for keeping hair/sweat out of your eyes",
+        "price": "$18",
+        "categories": ["basketball", "indoor"]
+    },
+    {
+        "name": "Tennis Racket",
+        "description": "Lightweight tennis racket with a high-tension string pattern and graphite frame",
+        "price": "$144",
+        "categories": ["tennis", "outdoor"]
+    },
+    {
+        "name": "Tennis Balls",
+        "description": "Pack of 3 pressurized tennis balls for professional matches",
+        "price": "$13",
+        "categories": ["tennis", "outdoor"]
+    }
+]
