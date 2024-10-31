@@ -1,64 +1,43 @@
 <!DOCTYPE html>
+<html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="products.css">
+        <title>Products 2</title>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <style>
+            .products {display: block; margin: 20px; font-family: 'Roboto', sans-serif;}
+            .product {border: 2px solid #1E90FF; background-color: #f0f8ff; display: block; padding: 20px; margin-bottom: 20px; border-radius: 8px;}
+            .product > .name {color: #003366; font-size: 24px; font-weight: bold; display: block; margin-bottom: 10px;}
+            .product > .description {color: #255882; font-size: 14px; margin-bottom: 10px; display: block;}
+            .product > .price {color: #1E90FF; font-size: 18px; font-weight: bold; margin-bottom: 15px; display: block;}
+            .product > .category {color: white; background-color: #b07ff4; font-size: 12px; padding: 5px; display: inline-block; border-radius: 4px;}
+        </style>
     </head>
     <body>
-        <h1>JSON Product List - Sporting Goods</h1>
-        <div id="product-container"></div>
+        <h1>List of All Products</h1>
+        <div id="allProducts" class="products"></div>
         <script>
-            const products = [
-                {
-                    "name": "Soccer Ball",
-                    "description": "Men's professional-grade soccer ball for outdoor use",
-                    "price": "$30",
-                    "categories": ["soccer", "outdoor"]
-                },
-                {
-                    "name": "Soccer Cleats",
-                    "description": "Durable soccer cleats with metal firm-ground studs",
-                    "price": "$90",
-                    "categories": ["soccer", "outdoor"]
-                },
-                {
-                    "name": "Shin Guards",
-                    "description": "High-impact resistant shin guards fitted with the latest in protection tech with adjustable straps",
-                    "price": "$28",
-                    "categories": ["soccer", "outdoor"]
-                },
-                {
-                    "name": "Basketball",
-                    "description": "Indoor basketball, size 29.5",
-                    "price": "$35",
-                    "categories": ["basketball", "indoor"]
-                },
-                {
-                    "name": "Outdoor Basketball Hoop",
-                    "description": "Adjustable basketball hoop with a 48-inch shatterproof backboard",
-                    "price": "$270",
-                    "categories": ["basketball", "outdoor"]
-                },
-                {
-                    "name": "Sweatband",
-                    "description": "Breathable headband for keeping hair/sweat out of your eyes",
-                    "price": "$18",
-                    "categories": ["basketball", "indoor"]
-                },
-                {
-                    "name": "Tennis Racket",
-                    "description": "Lightweight tennis racket with a high-tension string pattern and graphite frame",
-                    "price": "$144",
-                    "categories": ["tennis", "outdoor"]
-                },
-                {
-                    "name": "Tennis Balls",
-                    "description": "Pack of 3 pressurized tennis balls for professional matches",
-                    "price": "$13",
-                    "categories": ["tennis", "outdoor"]
-                }
-            ];
-            const entireString = JSON.stringify(products, null, 2);
-            document.getElementById('product-container').innerHTML = `<pre>${entireString}</pre>`;
-        </script>
+            /*Defining a function to display all products*/
+            function displayProducts(data)
+            {
+                let productInfo = '';
+                data.forEach(product => {
+                    /*Add each product to the soon to be output*/
+                    productInfo += `
+                        <div class="product">
+                            <span class="name">${product.name}</span>
+                            <span class="description">${product.description}</span>
+                            <span class="price">Price: ${product.price}</span>
+                            <span class="category">Categories: ${product.categories.join(', ')}</span>
+                        </div>
+                    `;
+                });
+                $('#allProducts').html(productInfo);
+            }
+            /*Grabbing products from the json file and calling above function*/
+            $.get('products.json', function(data) {
+                displayProducts(data);
+            });
+        </script>        
     </body>
 </html>
